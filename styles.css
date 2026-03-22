@@ -231,19 +231,31 @@ html {
     flex-wrap: wrap;
 }
 
+.quantity-control button {
+    padding: 4px 8px;
+    font-size: 13px;
+}
+
 .quantity-control input {
-    width: 45px;
+    width: 35px;
     text-align: center;
-    padding: 5px;
+    padding: 4px;
+    font-size: 13px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+.quantity-control button:last-child {
+    padding: 5px 10px;
+    font-size: 13px;
 }
 
 button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 8px 14px;
+    padding: 6px 10px; /* más compacto */
+    font-size: 14px;   /* más pequeño */
     cursor: pointer;
     border-radius: 8px;
     font-weight: 600;
@@ -258,7 +270,9 @@ button:hover {
 /* Botón eliminar */
 .button-remove {
     background-color: #dc3545;
-    padding: 5px 10px;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
 }
 
 .button-remove:hover {
@@ -354,12 +368,6 @@ footer{
 /* ================================
    Responsivo
 ================================ */
-@media (max-width: 900px) {
-    li {
-        width: 45%;
-    }
-}
-
 @media (max-width: 600px) {
     header {
         flex-direction: column;
@@ -377,11 +385,35 @@ footer{
         height: auto;
     }
 
+    /* 👇 IMPORTANTE: en fila, no columna */
     .quantity-control {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 6px;
     }
 
+    /* 👇 NO más botones gigantes */
     button {
+        width: auto;
+    }
+
+    /* 👇 tamaños compactos */
+    .quantity-control button {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .quantity-control input {
+        width: 30px;
+        font-size: 12px;
+    }
+
+    .button-remove {
+        padding: 3px 6px;
+        font-size: 11px;
+    }
+
+    /* 👇 solo este botón grande */
+    #sendOrder {
         width: 100%;
     }
 }
